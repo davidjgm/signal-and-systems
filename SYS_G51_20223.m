@@ -45,3 +45,16 @@ x5 = sin(2*t + 2*pi);
 figure
 plot(t,x4,t,x5)
 title('sin(2*t + 2*pi) tiene periodo \pi')
+
+% ------------------------------------------
+% CLASE 12/08/2022
+% ------------------------------------------
+t=-pi/4:0.01:5*pi/4;
+x=sin(8*t);
+plot(t,x)
+hold on
+x2=sin(8*(t-pi/50));
+plot(t,x2)
+legend('sen(8*t)','sen(8*(t+pi/50)')
+title('Desplazamiento a la derecha')
+
