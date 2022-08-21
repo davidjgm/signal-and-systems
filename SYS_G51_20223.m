@@ -58,3 +58,31 @@ plot(t,x2)
 legend('sen(8*t)','sen(8*(t+pi/50)')
 title('Desplazamiento a la derecha')
 
+% ------------------------------------------
+% CLASE 19/08/2022
+% ------------------------------------------
+
+t = 0:0.001:50;
+n = 0:200;
+omega0A = pi/3;
+omega0B = 1/3
+
+% Exponencial Compleja Continua
+xA = exp(1i*omega0A*t);
+xB = exp(1i*omega0B*t);
+figure
+plot(t,real(xA))
+title('e^{(j*pi*t/3)}')
+figure
+plot(t,real(xB))
+title('e^{(j*t/3)}')
+
+% Exponencial Compleja Discreta
+xA2 = exp(1i*omega0A*n);
+xB2 = exp(1i*omega0B*n);
+figure
+stem(n,real(xA2))
+title('e^{(j*pi*n/3)}')
+figure
+stem(n,real(xB2))
+title('e^{(j*n/3)}')
