@@ -86,3 +86,13 @@ title('e^{(j*pi*n/3)}')
 figure
 stem(n,real(xB2))
 title('e^{(j*n/3)}')
+
+% ------------------------------------------
+% CLASE 23/09/2022
+% EJEMPLO GUIA PARA EL EJERCICIO DEJADO PARA EL DÍA 30/09/2022
+% ------------------------------------------
+
+% Graficar ak = (e^(j*pi*k/4)+e^(-j*pi*k/4))/(e^(j*pi*k/2)+e^(-j*pi*k/2))
+k=-20:20;
+ak = (exp(1i*pi*k/4)+exp(-1i*pi*k/4))./(exp(1i*pi*k/2)+exp(-1i*pi*k/2))
+stem(k,ak)
