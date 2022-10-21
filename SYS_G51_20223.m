@@ -34,6 +34,19 @@ figure
 plot(t,imag(x3))
 title('Parte imaginaria de e^{(i*(2*pi*t+3/4))}')
 
+% Transformada de Fourier en tiempo discreto
+a = 0.2;
+omega = -pi:0.01:pi;
+X = 1./(1-a*exp(-1i*omega));
+%plot(omega,abs(X))
+
+% Transformada de Fourier en tiempo continuo
+a=5;
+omega = -100:0.01:100;
+X = 1./(a + 1i*omega);
+plot(omega,imag(X))
+
+
 % Magnitud de x3 = e^(i*2*pi*t+3/4)
 figure
 plot(t,abs(x3))
