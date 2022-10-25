@@ -109,3 +109,17 @@ title('e^{(j*n/3)}')
 k=-20:20;
 ak = (exp(1i*pi*k/4)+exp(-1i*pi*k/4))./(exp(1i*pi*k/2)+exp(-1i*pi*k/2))
 stem(k,ak)
+
+% ------------------------------------------
+% CLASE 21/10/2022
+% ------------------------------------------
+% x[n]=0.1^2 -->> X(omega) continuo
+w=0:0.001:2*pi;
+plot(w,abs(1./(1-0.1*exp(-1i*w))));ylim([0 1.2])
+hold on
+% x[n]=0.1^2 -->>  X(k) Discreto
+n=0:50;
+X=fft(0.1.^n);
+w2=linspace(0,2*pi,length(X));
+stem(w2,abs(X))
+hold off
