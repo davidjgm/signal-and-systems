@@ -123,3 +123,48 @@ X=fft(0.1.^n);
 w2=linspace(0,2*pi,length(X));
 stem(w2,abs(X))
 hold off
+
+
+% ------------------------------------------
+% CÓDIGO PARA EL LABORATORIO
+% ------------------------------------------
+clc
+clear all
+close all
+
+% Discetización de una señal
+t =0:0.01:10;   % Vector de tiempo de 0 a 10 segundos
+x = cos(2*t);   % Señal original
+dt = 2e-1;      % Delta de tiempo de 200 milisegundos.
+tt = 0:dt:10;   % Nuevo vector de tiempo
+xx = cos(2*tt); % Señal discretizada
+plot(t,x)       % Señal original
+hold on
+stem(tt,xx) % Señal discretizada
+
+clc
+clear all
+close all
+
+% Calculo de la FFT de una señal
+Fs = 1000;      % Frecuencia de muetreo                
+T = 1/Fs;       % Periodo de muestreo       
+L = 1500;       % Longitud de la señal
+t = (0:L-1)*T;  % Vector de tiempo
+
+S = 0.7*sin(2*pi*50*t) + sin(2*pi*120*t);   % Creo la señal
+X = S + 0*2*randn(size(t));
+
+plot(t(1:100),X(1:100)) % Gráfico los primero 100 valores de la señal
+title('Señal en el tiempo')
+xlabel('t (segundos)')
+ylabel('X(t)')
+
+Y = fft(X); % Transformada Discreta de Fourier de X
+
+f = Fs*(-(L/2 -1):L/2);
+plot(f,abs(Y)) 
+title('Espectro de amplitud de X(t)')
+xlabel('f (Hz)')
+ylabel('|Y(f)|')
+
