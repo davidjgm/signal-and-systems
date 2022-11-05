@@ -124,6 +124,12 @@ w2=linspace(0,2*pi,length(X));
 stem(w2,abs(X))
 hold off
 
+% Clase 28/10/2022
+sys = tf(1,[1 3 2]) % Función de transferencia
+step(sys)% Respuesta al escalón
+figure
+impulse(sys) % Respuesta al impulso
+
 
 % ------------------------------------------
 % CÓDIGO PARA EL LABORATORIO
@@ -167,4 +173,5 @@ plot(f,abs(Y))
 title('Espectro de amplitud de X(t)')
 xlabel('f (Hz)')
 ylabel('|Y(f)|')
+
 
